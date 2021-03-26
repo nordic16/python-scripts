@@ -1,9 +1,12 @@
 import os
 import sys
 
-if __name__ == '__main__':
-    if len(sys.argv)  == 4:
+#!/usr/bin/python
 
+# USAGE: python autoshow.py [Parent folder] [TV Show name] [number of seasons]
+
+if __name__ == '__main__':
+    if len(sys.argv) == 4:
         parent_folder_path = sys.argv[1]
         tv_show_name = sys.argv[2]
         number_of_seasons = sys.argv[3]
@@ -16,7 +19,8 @@ if __name__ == '__main__':
                 os.chdir(path=tv_show_folder)
 
                 if number_of_seasons.isnumeric():
-                #Creates folders for x seasons.
+                    
+                    #Creates folders for x seasons.
                     for i in range(0, int(number_of_seasons)):
                         os.mkdir(os.path.join(os.getcwd(), f'Season { i + 1 }'))
 
